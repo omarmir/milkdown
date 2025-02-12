@@ -28,7 +28,7 @@
     "changeset": "changeset && node scripts/changelog.mjs",
     "release": "changeset publish",
     "commit": "git-cz",
-    "prepare": "husky",
+    "prepare": "husky && pnpm build",
     "storybook": "pnpm --filter=@milkdown/e2e run storybook"
   },
   "devDependencies": {
