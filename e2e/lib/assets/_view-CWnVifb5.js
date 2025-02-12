@@ -1,0 +1,1 @@
+import{aG as u,aH as o,aI as r,aJ as t}from"./utils-CEpiaGhY.js";function l(e,f){const n=a=>async()=>{await a.wait(u);const s=f(a);return e.type(a)instanceof o?a.update(r,i=>[...i,[e.id,s]]):a.update(t,i=>[...i,[e.id,s]]),n.view=s,n.type=e,()=>{e.type(a)instanceof o?a.update(r,i=>i.filter(d=>d[0]!==e.id)):a.update(t,i=>i.filter(d=>d[0]!==e.id))}};return n}export{l as $};

@@ -1,0 +1,1 @@
+import{c as n}from"./clsx-B-dksMZM.js";import{i}from"./utils-CEpiaGhY.js";function p(s){s.update(i,r=>{const o=r.attributes;return{...r,attributes:e=>{const t=typeof o=="function"?o(e):o;return{...t,class:n("prose dark:prose-invert",(t==null?void 0:t.class)||"","milkdown-theme-nord")}}}})}export{p as n};

@@ -1,0 +1,36 @@
+import { imageBlockConfig, imageBlockComponent } from '@milkdown/kit/component/image-block';
+import { inlineImageConfig, imageInlineComponent } from '@milkdown/kit/component/image-inline';
+import { g as confirmIcon, i as imageIcon, j as captionIcon } from './todo-list-B9RfgTQO.js';
+import 'atomico';
+
+const defineFeature = (editor, config) => {
+  editor.config((ctx) => {
+    ctx.update(inlineImageConfig.key, (value) => {
+      var _a, _b, _c, _d, _e, _f;
+      return {
+        uploadButton: (_a = config == null ? void 0 : config.inlineUploadButton) != null ? _a : () => "Upload",
+        imageIcon: (_b = config == null ? void 0 : config.inlineImageIcon) != null ? _b : () => imageIcon,
+        confirmButton: (_c = config == null ? void 0 : config.inlineConfirmButton) != null ? _c : () => confirmIcon,
+        uploadPlaceholderText: (_d = config == null ? void 0 : config.inlineUploadPlaceholderText) != null ? _d : "or paste link",
+        onUpload: (_f = (_e = config == null ? void 0 : config.inlineOnUpload) != null ? _e : config == null ? void 0 : config.onUpload) != null ? _f : value.onUpload,
+        proxyDomURL: config == null ? void 0 : config.proxyDomURL
+      };
+    });
+    ctx.update(imageBlockConfig.key, (value) => {
+      var _a, _b, _c, _d, _e, _f, _g, _h;
+      return {
+        uploadButton: (_a = config == null ? void 0 : config.blockUploadButton) != null ? _a : () => "Upload file",
+        imageIcon: (_b = config == null ? void 0 : config.blockImageIcon) != null ? _b : () => imageIcon,
+        captionIcon: (_c = config == null ? void 0 : config.blockCaptionIcon) != null ? _c : () => captionIcon,
+        confirmButton: (_d = config == null ? void 0 : config.blockConfirmButton) != null ? _d : () => "Confirm",
+        captionPlaceholderText: (_e = config == null ? void 0 : config.blockCaptionPlaceholderText) != null ? _e : "Write Image Caption",
+        uploadPlaceholderText: (_f = config == null ? void 0 : config.blockUploadPlaceholderText) != null ? _f : "or paste link",
+        onUpload: (_h = (_g = config == null ? void 0 : config.blockOnUpload) != null ? _g : config == null ? void 0 : config.onUpload) != null ? _h : value.onUpload,
+        proxyDomURL: config == null ? void 0 : config.proxyDomURL
+      };
+    });
+  }).use(imageBlockComponent).use(imageInlineComponent);
+};
+
+export { defineFeature };
+//# sourceMappingURL=index-D_wxIKQE.js.map

@@ -1,0 +1,33 @@
+import { listItemBlockComponent, listItemBlockConfig } from '@milkdown/kit/component/list-item-block';
+import { html } from 'atomico';
+import clsx from 'clsx';
+import { b as bulletIcon, d as checkBoxCheckedIcon, f as checkBoxUncheckedIcon } from './todo-list-B9RfgTQO.js';
+
+function configureListItem(ctx, config) {
+  ctx.set(listItemBlockConfig.key, {
+    renderLabel: ({ label, listType, checked, readonly }) => {
+      var _a, _b, _c, _d, _e, _f;
+      if (checked == null) {
+        if (listType === "bullet")
+          return html`<span class="label"
+            >${(_b = (_a = config == null ? void 0 : config.bulletIcon) == null ? void 0 : _a.call(config)) != null ? _b : bulletIcon}</span
+          >`;
+        return html`<span class="label">${label}</span>`;
+      }
+      if (checked)
+        return html`<span
+          class=${clsx("label checkbox", readonly && "readonly")}
+          >${(_d = (_c = config == null ? void 0 : config.checkBoxCheckedIcon) == null ? void 0 : _c.call(config)) != null ? _d : checkBoxCheckedIcon}</span
+        >`;
+      return html`<span class=${clsx("label checkbox", readonly && "readonly")}
+        >${(_f = (_e = config == null ? void 0 : config.checkBoxUncheckedIcon) == null ? void 0 : _e.call(config)) != null ? _f : checkBoxUncheckedIcon}</span
+      >`;
+    }
+  });
+}
+const defineFeature = (editor, config) => {
+  editor.config((ctx) => configureListItem(ctx, config)).use(listItemBlockComponent);
+};
+
+export { defineFeature };
+//# sourceMappingURL=index-DTtK_bo_.js.map
